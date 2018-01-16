@@ -13,7 +13,6 @@
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "YARN_PRODUCTION=false yarn run client-install && yarn run client-build"
-},
   },
   "author": "@tipiwiny",
   "license": "ISC",
