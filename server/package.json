@@ -12,7 +12,8 @@
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --only=dev --prefix client && npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn run client-install && yarn run client-build"
+},
   },
   "author": "@tipiwiny",
   "license": "ISC",
