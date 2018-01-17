@@ -29,7 +29,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
-    "react-scripts": "1.0.17",
+    "react-scripts": "1.0.17"
   },
   "scripts": {
     "start": "react-scripts start",
