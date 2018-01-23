@@ -1,20 +1,7 @@
-const mongoose = require('mongoose');
-const requireLogin = require('../middlewares/requireLogin');
-const requireCredits = require('../middlewares/requireCredits');
+module.exports = (req, res, next) => {
+  if (req.user.credits < 1) {
+    return res.status(403).send({ error: 'Not enough credits!' });
+  }
 
-const Survey = mongoose.model('surveys');
-
-module.exports = app => {
-  app.post('/api/surveys', requireLogin, requireCredits, (req, res) => {
-    const { title, subject, body, recipients } = req.body;
-
-    const survey = new Survey({
-      title,
-      subject,
-      body,
-      recipients: recipients.split(',').map(email => ({ email: email.trim() })),
-      _user: req.user.id,
-       dateSent: Date.now()
-    });
-  });
+  next();
 };
